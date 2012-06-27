@@ -3,34 +3,78 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Io-wraps-whitli-php by ajotwani</title>
+    <title>I/O Wraps Whit.li (PHP) from Mashery</title>
 
+	<link rel="shortcut icon" href="http://mashery.github.com/assets/ico/favicon.ico">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	
+	<!-- overriding with Bootstrap and mashery-tools.css -->
+	<link href="http://mashery.github.com/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://mashery.github.com/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="http://mashery.github.com/assets/css/docs.css" rel="stylesheet">
+    <link href="http://mashery.github.com/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+	<link href="http://mashery.github.com/assets/css/mashery-tools.css" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body class="tool-details-page">
     <div class="wrapper">
+	
+		<!-- BEGIN mashery navigation bar -->
+		<div class="navbar navbar-fixed-top">
+		      <div class="navbar-inner">
+		        <div class="container">
+				<div id="logo"><img src="http://mashery.github.com/assets/img/mashery-logo.png" class="bs-icon"></div>
+
+		          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <!-- <a class="brand" href="./index.html">Bootstrap</a> -->
+		          <div class="nav-collapse collapse">
+		            <ul class="nav">
+		              <li class="">
+		                <a href="http://dev.mashery.com">Home</a>
+		              </li>
+		              <li class="">
+		                <a href="http://dev.mashery.com/apis">APIs</a>
+		              </li>
+		              <li class="active">
+		                <a href="http://mashery.github.com">Tools</a>
+		              </li>
+		              <li class="">
+		                <a href="http://mashery.appstores.com">Apps</a>
+		              </li>
+		              <li class="">
+		                <a href="http://masherydev.tumblr.com">Blog</a>
+		              </li>
+		            </ul>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		<!-- END mashery navigation bar -->
+	
       <header>
-        <h1>Io-wraps-whitli-php</h1>
-        <p>Whit.li PHP I/O Wraps PHP Library</p>
-
-        <p class="view"><a href="https://github.com/ajotwani/io-wraps-whitli-php">View the Project on GitHub <small>ajotwani/io-wraps-whitli-php</small></a></p>
-
+        <h1>I/O Wraps Whit.li (PHP)</h1>
+        <p>Whit.li alpha client libraries for PHP</p>
 
         <ul>
           <li><a href="https://github.com/ajotwani/io-wraps-whitli-php/zipball/master">Download <strong>ZIP File</strong></a></li>
           <li><a href="https://github.com/ajotwani/io-wraps-whitli-php/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ajotwani/io-wraps-whitli-php">View On <strong>GitHub</strong></a></li>
         </ul>
+		<p><a href="https://github.com/ajotwani/io-wraps-whitli-php/" class="btn btn-primary btn-large" >View Project on GitHub</a></p>
+
       </header>
       <section>
-        <h2>What is I/O Wraps Rovi (PHP)?</h2>
+        <h2>What is I/O Wraps Whit.li (PHP)?</h2>
 
-<p>A PHP wrapper for Rovi Cloud Service APIs.</p>
+<p>A PHP wrapper for Whit.li APIs.</p>
 
 <h2>What is I/O Wraps?</h2>
 
@@ -61,6 +105,7 @@ all relative.</p>
 <li><p>The three functional PHP examples are rovi_autocomplete.php, rovi_metadata.php and rovi_tvlistings.php. These are live examples, not the libraires. To see how the libraries are used, just peek at the source.</p></li>
 <li><p>Add your keys and secrets to these source files to make calls. Each API requires a unique key/secret. Head over to <a href="http://developer.rovicorp.com">http://developer.rovicorp.com</a>, sign in, and navigate to "My Account" to fetch or register for keys.</p></li>
 <li><p>Navigate your browser to the example PHP apps, and give it a whirl.</p></li>
+
 </ol><h2>Examples/</h2>
 
 <pre><code>&lt;pre&gt;Code snippets go here&lt;/pre&gt;
@@ -69,13 +114,14 @@ all relative.</p>
 <h2>About</h2>
 
 <ul>
-<li>Designed and built with lots of love in <strong>New York</strong> &amp; <strong>San Francisco</strong> by the biggest little <a href="http://twitter.com/masherydev">Developer Outreach team</a> on seven continents.</li>
-<li>No warranty expressed or implied. Software as is.</li>
-<li>Code licensed under the <a href="http://www.opensource.org/licenses/mit-license.html">MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</li>
+	<li>Designed and built with lots of <span class="love">love</span> in <strong>New York</strong> &amp; <strong>San Francisco</strong> by the biggest little <a href="http://twitter.com/masherydev">Developer Outreach team</a> on seven continents.</li>
+	<li>No warranty expressed or implied. Software as is.</li>
+	<li>Code licensed under the <a href="http://www.opensource.org/licenses/mit-license.html">MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</li>
+
 </ul>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/ajotwani">ajotwani</a></p>
+       	<p>Check out more open-source tools from Mashery on <a href="http://mashery.github.com">Github</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
