@@ -3,8 +3,8 @@
 // Client library (network/authentication)
 require_once './_apiClient.php';
 
-// Rovi resource/method library
-require_once './contrib/apiWhitliapiService.php';
+// Whitli resource/method library
+ require_once './contrib/apiWhitliapiService.php';
 
 // Instantiate client
 $client = new apiClient();
@@ -25,7 +25,7 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 	$optParams = array('schema' => $_GET['schema'],'format' => $_GET['format']);
 	
 	// Make the API call with the required parameters
-	$keyResponse = new KeyResponse($service->Key->Get($key_id, $uid));
+	$keyResponse = $service->Key->Get($key_id, $uid);
 }
 ?>
 
@@ -80,7 +80,7 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 					echo("We have made a successful API call to Whit.li:<br /><br />");
 					echo('<code>$keyResponse->getStatus()</code> yields <b>' . $keyResponse->getStatus() . '</b><br />');
 					echo('<code>$keyResponse->getMessage()</code> yields <b>'. $keyResponse->getMessage() . '</b><br />');
-					echo('<code>$keyResponse->getBody()->getKey()</code> yields <b>' . $keyResponse->getBody()->getKey() . '</b><br />');
+					echo('<code>$keyResponse->getBody()->getKey()</code> yields <b>' .$keyResponse->getBody()->getKey() . '</b><br />');
 					echo('<code>$keyResponse->getTimestamp()</code> yields <b>'. $keyResponse->getTimestamp() . '</b><br />');
 				?>
 				<?php endif
