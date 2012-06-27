@@ -43,7 +43,59 @@ if (isset($_GET['requestBody'])) {
 				<form id="import" method="GET" action="whitli_import_generic.php" class="well">
 					<div>
 						<label>JSON request object</label>
-						<textarea id="requestBody" name="requestBody" width="300" height="30"></textarea>
+						<textarea id="requestBody" name="requestBody" width="300" height="30">{
+  "schema":"generic",
+  "uid":"1",
+  "profile_data":{
+    "first_name":"John",
+    "last_name":"Whitli",
+    "hometown_location":"Austin, Tx",
+    "work_history":[
+      {
+        "location":{
+          "city":"Austin",
+          "state":"Texas"
+        },
+        "company_name":"Whit.li- Explore Minds Like Yours",
+        "position":"Emperor",
+        "description":"",
+        "start_date":"2011-04"
+      }
+    ]
+  },
+  "posts":[
+    {
+      "id":"152543539_10150215025383600",
+      "message":"this is a post",
+      "created_time":"2011-12-09T15:46:23+0000"
+    },
+    {
+      "id":"152543539_10150107473533600",
+      "message":"this is a post",
+      "created_time":"2011-12-08T15:46:23+0000"
+    }
+  ],
+  "likes":[
+    {
+      "name":"The Black Keys",
+      "id":"8746730308",
+      "category":"Musician/band",
+      "created_time":"2010-05-07T16:35:29+0000"
+    },
+    {
+      "name":"Austin, Texas",
+      "id":"4034730278",
+      "category":"Community",
+      "created_time":"2010-05-06T16:35:29+0000"
+    },
+    {
+      "name":"Michio Kaku",
+      "id":"111722405511675",
+      "category":"Author",
+      "created_time":"2010-05-07T16:35:29+0000"
+    }
+  ]
+}</textarea>
 					</div>
 					<div>
 						<label></label>
