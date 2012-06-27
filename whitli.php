@@ -1,19 +1,30 @@
-<?php
+<?php session_start();
 
-session_start();
+// Client library (network/authentication)
 require_once './_apiClient.php';
+
+// Rovi resource/method library
 require_once './contrib/apiWhitliapiService.php';
+
+// Instantiate client
 $client = new apiClient();
-// $client->setDeveloperKey("YOUR_KEY_HERE");
-$client->setDeveloperKey("xkks42aggfpx68dpbm4834ag");
+
+// Set credentials
+$client->setDeveloperKey("YOUR_KEY_HERE");
+
+// Instantiate service
 $service = new apiWhitliapiService($client);
 
+// Initialize keyResponse variable
 $keyResponse = new KeyResponse;
 
+// Check for request params uid and key_id
 if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 	$uid = $_GET['uid'];
 	$key_id = $_GET['key_id'];
 	$optParams = array('schema' => $_GET['schema'],'format' => $_GET['format']);
+	
+	// Make the API call with the required parameters
 	$keyResponse = new KeyResponse($service->Key->Get($key_id, $uid));
 }
 ?>
@@ -21,14 +32,13 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 <!doctype html>
 <html>
 	<head>
-		<title>Whit.li API - Mashery I/O Wrap for PHP</title>
+		<title>Whit.li API - Mashery I/O Wraps Example</title>
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" media="screen" />
-
 	</head>
 	<body>
 		<div class="container" id="mainwrap">
 			<header>
-				<h1>Whit.li API - Mashery I/O Wrap for PHP</h1>
+				<h1>Whit.li API - Mashery I/O Wraps Example</h1>
 			</header>
 
 			<div class="request">
@@ -66,11 +76,12 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 				<hr />
 				
 				<?php
-echo("We have made a successful API call to Whit.li:<br /><br />");
-echo('<code>$keyResponse->getStatus()</code> yields <b>' . $keyResponse->getStatus() . '</b><br />');
-echo('<code>$keyResponse->getMessage()</code> yields <b>'. $keyResponse->getMessage() . '</b><br />');
-echo('<code>$keyResponse->getBody()->getKey()</code> yields <b>' . $keyResponse->getBody()->getKey() . '</b><br />');
-echo('<code>$keyResponse->getTimestamp()</code> yields <b>'. $keyResponse->getTimestamp() . '</b><br />');
+					// Send output to the browser
+					echo("We have made a successful API call to Whit.li:<br /><br />");
+					echo('<code>$keyResponse->getStatus()</code> yields <b>' . $keyResponse->getStatus() . '</b><br />');
+					echo('<code>$keyResponse->getMessage()</code> yields <b>'. $keyResponse->getMessage() . '</b><br />');
+					echo('<code>$keyResponse->getBody()->getKey()</code> yields <b>' . $keyResponse->getBody()->getKey() . '</b><br />');
+					echo('<code>$keyResponse->getTimestamp()</code> yields <b>'. $keyResponse->getTimestamp() . '</b><br />');
 				?>
 				<?php endif
 				?>
