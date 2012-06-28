@@ -52,7 +52,7 @@ Follow the steps below for a quick start to using this client library:
 
 1. Grab the latest source with git. 
 
-    <pre>git clone git://github.com/mashery/io-wrap-whitli-php.git</pre>
+    <pre>git clone git://github.com/mashery/io-wraps-whitli-php.git</pre>
 
 2. Move the project source tree into your sandbox LAMP stack environment (anywhere below the httpdocs/htdocs level -- example code is relatively linked)
 
