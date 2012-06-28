@@ -1,4 +1,4 @@
-{
+ {
 	"kind": "discovery#restDescription",
 	"discoveryVersion": "v1",
 	"title": "Whit.li API",
@@ -11,9 +11,14 @@
 	"servicePath": "/",
 	"baseUrl": "https://api.whit.li",
 	"schemas": {
-		"genericBody": {
-			"id": "importBody",
-			"type": "string"
+		"importGeneric": {
+			"id": "importGeneric",
+			"type": "object",
+			"properties": {
+				"postBody": {
+					"type":"string"
+				}	
+			}
 		},
 		"keyResponse": {
 			"id": "keyResponse",
@@ -188,7 +193,7 @@
 
 	},
 	"resources": {
-		"User": {
+		"UserMethods": {
 			"methods": {
 				"ImportToken": {
 					"path": "user/importToken",
@@ -229,7 +234,7 @@
 							]
 						}
 					},
-					"id": "User.ImportToken",
+					"id": "UserMethods.ImportToken",
 					"response": {
 						"$ref":"importResponse"
 					}
@@ -267,7 +272,7 @@
 
 						}
 					},
-					"id": "User.Populate",
+					"id": "UserMethods.Populate",
 					"response": {
 						"$ref":"populateResponse"
 					}
@@ -298,17 +303,17 @@
 
 						}
 					},
-					"id": "User.importGeneric",
+					"id": "UserMethods.importGeneric",
 					"response": {
 						"$ref":"importResponse"
 					},
 					"request": {
-						"$ref":"importBody"
+						"$ref":"importGeneric"
 					}
 				}
 			}
 		},
-		"Key": {
+		"KeyMethods": {
 			"methods": {
 				"Get": {
 					"path": "key/get",
@@ -357,7 +362,7 @@
 
 						}
 					},
-					"id": "Key.Get",
+					"id": "KeyMethods.Get",
 					"response": {
 						"$ref": "keyResponse"
 					}
@@ -415,7 +420,7 @@
 							]
 						}
 					},
-					"id": "Key.Compare",
+					"id": "KeyMethods.Compare",
 					"response": {
 						"$ref":"compareResponse"
 					}

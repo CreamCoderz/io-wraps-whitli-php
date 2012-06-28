@@ -4,7 +4,7 @@
 require_once './_apiClient.php';
 
 // Whitli resource/method library
- require_once './contrib/apiWhitliapiService.php';
+require_once './contrib/apiWhitliapiService.php';
 
 // Instantiate client
 $client = new apiClient();
@@ -22,7 +22,7 @@ $importResponse = new ImportResponse;
 if (isset($_GET['requestBody'])) {
 	
 	// Make the API call with the required parameters
-	$importResponse = $service->User->ImportGeneric($_GET['requestBody']);
+	$importResponse = $service->UserMethods->ImportGeneric($_GET['requestBody']);
 	
 }
 ?>
@@ -30,13 +30,13 @@ if (isset($_GET['requestBody'])) {
 <!doctype html>
 <html>
 	<head>
-		<title>Whit.li API - Mashery I/O Wraps Example</title>
+		<title>Whit.li API - Mashery I/O Wraps (Beta) Example</title>
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" media="screen" />
 	</head>
 	<body>
 		<div class="container" id="mainwrap">
 			<header>
-				<h1>Whit.li API - Mashery I/O Wraps Example</h1>
+				<h1>Whit.li API - Mashery I/O Wraps (Beta) Example</h1>
 			</header>
 
 			<div class="request">

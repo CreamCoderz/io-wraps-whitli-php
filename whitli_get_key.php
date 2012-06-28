@@ -4,8 +4,8 @@
 require_once './_apiClient.php';
 
 // Whitli resource/method library
- require_once './contrib/apiWhitliapiService.php';
-
+require_once './contrib/apiWhitliapiService.php';
+ 
 // Instantiate client
 $client = new apiClient();
 
@@ -25,24 +25,25 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 	$optParams = array('schema' => $_GET['schema'],'format' => $_GET['format']);
 	
 	// Make the API call with the required parameters
-	$keyResponse = $service->Key->Get($key_id, $uid);
+	$keyResponse = $service->KeyMethods->Get($key_id,$uid);
+	// $keyResponse = $service->Key->Get($key_id, $uid);
 }
 ?>
 
 <!doctype html>
 <html>
 	<head>
-		<title>Whit.li API - Mashery I/O Wraps Example</title>
+		<title>Whit.li API - Mashery I/O Wraps (Beta) Example</title>
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" media="screen" />
 	</head>
 	<body>
 		<div class="container" id="mainwrap">
 			<header>
-				<h1>Whit.li API - Mashery I/O Wraps Example</h1>
+				<h1>Whit.li API - Mashery I/O Wraps (Beta) Example</h1>
 			</header>
 
 			<div class="request">
-				<form id="key" method="GET" action="whitli.php" class="well">
+				<form id="key" method="GET" action="whitli_get_key.php" class="well">
 					<div>
 						<label>uid:</label>
 						<input type="text" id="uid" name="uid" value="1" placeholder="required" />

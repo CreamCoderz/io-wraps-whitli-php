@@ -21,20 +21,18 @@ require_once 'service/apiServiceRequest.php';
 
 
   /**
-   * The "User" collection of methods.
+   * The "UserMethods" collection of methods.
    * Typical usage is:
    *  <code>
    *   $whitliapiService = new apiWhitliapiService(...);
-   *   $User = $whitliapiService->User;
+   *   $UserMethods = $whitliapiService->UserMethods;
    *  </code>
    */
-  class UserServiceResource extends apiServiceResource {
-
-
+  class UserMethodsServiceResource extends apiServiceResource {
     /**
-     * Import a generic profile from a JSON object. (User.ImportGeneric)
+     * Import a generic profile from a JSON object. (UserMethods.ImportGeneric)
      *
-     * @param $postBody the {@link }
+     * @param $postBody the {@link ImportGeneric}
      * @param array $optParams Optional parameters. Valid optional parameters are listed below.
      *
      * @opt_param string format You can select between json, xml, csv, php and serialized response formats.
@@ -52,7 +50,7 @@ require_once 'service/apiServiceRequest.php';
     }
     /**
      * Import a facebook uid and oauth_token combination to allow Whit.li to populate profile, post and
-     * interest information automatically at a predetermined schedule. (User.ImportToken)
+     * interest information automatically at a predetermined schedule. (UserMethods.ImportToken)
      *
      * @param string $oauth_token Facebook oauth token
      * @param int $uid The ID of the user.
@@ -72,7 +70,8 @@ require_once 'service/apiServiceRequest.php';
       }
     }
     /**
-     * Request Whit.li to refresh data associated with a given uid and oauth_token pair. (User.Populate)
+     * Request Whit.li to refresh data associated with a given uid and oauth_token pair.
+     * (UserMethods.Populate)
      *
      * @param int $uid The ID of the user.
      * @param array $optParams Optional parameters. Valid optional parameters are listed below.
@@ -93,19 +92,19 @@ require_once 'service/apiServiceRequest.php';
   }
 
   /**
-   * The "Key" collection of methods.
+   * The "KeyMethods" collection of methods.
    * Typical usage is:
    *  <code>
    *   $whitliapiService = new apiWhitliapiService(...);
-   *   $Key = $whitliapiService->Key;
+   *   $KeyMethods = $whitliapiService->KeyMethods;
    *  </code>
    */
-  class KeyServiceResource extends apiServiceResource {
+  class KeyMethodsServiceResource extends apiServiceResource {
 
 
     /**
      * Compare two users based on a given context associated with key vectors and components.
-     * (Key.Compare)
+     * (KeyMethods.Compare)
      *
      * @param int $context_id The ID of a given context_id to match against. Options are 100 for Work, 101 for Shopping, 102 for Travel, 103 for Roommates, 104 for Friends
      * @param int $uid2 The ID of the second user to compare.
@@ -129,7 +128,7 @@ require_once 'service/apiServiceRequest.php';
     /**
      * Get a Whit.li key.  A Whit.li key contains information that describes the various traits of a
      * person.   Each Whit.li key contains multiple vectors that have detailed information about an
-     * individual based on the individuals psycho-social profile. (Key.Get)
+     * individual based on the individuals psycho-social profile. (KeyMethods.Get)
      *
      * @param int $key_id The ID of the key.
      * @param int $uid The ID of the user.
@@ -168,8 +167,8 @@ require_once 'service/apiServiceRequest.php';
  * @author Google, Inc.
  */
 class apiWhitliapiService extends apiService {
-  public $User;
-  public $Key;
+  public $UserMethods;
+  public $KeyMethods;
   /**
    * Constructs the internal representation of the Whitliapi service.
    *
@@ -183,8 +182,8 @@ class apiWhitliapiService extends apiService {
     $this->io = $apiClient->getIo();
 
     $apiClient->addService($this->serviceName, $this->version);
-    $this->User = new UserServiceResource($this, $this->serviceName, 'User', json_decode('{"methods": {"ImportGeneric": {"parameters": {"format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "request": {"type": "string"}, "id": "User.importGeneric", "httpMethod": "PUT", "path": "user/importGeneric", "response": {"$ref": "importResponse"}}, "ImportToken": {"parameters": {"oauth_token": {"default": "", "required": true, "type": "string", "location": "query"}, "uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "importResponse"}, "httpMethod": "POST", "path": "user/importToken", "id": "User.ImportToken"}, "Populate": {"parameters": {"uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "populateResponse"}, "httpMethod": "GET", "path": "user/populate", "id": "User.Populate"}}}', true));
-    $this->Key = new KeyServiceResource($this, $this->serviceName, 'Key', json_decode('{"methods": {"Compare": {"parameters": {"context_id": {"default": "100", "required": true, "type": "integer", "location": "query"}, "schema": {"default": "fb", "required": false, "type": "string", "location": "query"}, "uid2": {"default": "", "required": true, "type": "integer", "location": "query"}, "uid1": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "compareResponse"}, "httpMethod": "GET", "path": "key/compare", "id": "Key.Compare"}, "Get": {"parameters": {"key_id": {"default": "1", "required": true, "type": "integer", "location": "query"}, "schema": {"default": "fb", "required": false, "type": "string", "location": "query"}, "uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "keyResponse"}, "httpMethod": "GET", "path": "key/get", "id": "Key.Get"}}}', true));
+    $this->UserMethods = new UserMethodsServiceResource($this, $this->serviceName, 'UserMethods', json_decode('{"methods": {"ImportGeneric": {"parameters": {"format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "request": {"$ref": "importGeneric"}, "id": "UserMethods.importGeneric", "httpMethod": "PUT", "path": "user/importGeneric", "response": {"$ref": "importResponse"}}, "ImportToken": {"parameters": {"oauth_token": {"default": "", "required": true, "type": "string", "location": "query"}, "uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "importResponse"}, "httpMethod": "POST", "path": "user/importToken", "id": "UserMethods.ImportToken"}, "Populate": {"parameters": {"uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "populateResponse"}, "httpMethod": "GET", "path": "user/populate", "id": "UserMethods.Populate"}}}', true));
+    $this->KeyMethods = new KeyMethodsServiceResource($this, $this->serviceName, 'KeyMethods', json_decode('{"methods": {"Compare": {"parameters": {"context_id": {"default": "100", "required": true, "type": "integer", "location": "query"}, "schema": {"default": "fb", "required": false, "type": "string", "location": "query"}, "uid2": {"default": "", "required": true, "type": "integer", "location": "query"}, "uid1": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "compareResponse"}, "httpMethod": "GET", "path": "key/compare", "id": "KeyMethods.Compare"}, "Get": {"parameters": {"key_id": {"default": "1", "required": true, "type": "integer", "location": "query"}, "schema": {"default": "fb", "required": false, "type": "string", "location": "query"}, "uid": {"default": "", "required": true, "type": "integer", "location": "query"}, "format": {"required": false, "default": "json", "enum": ["json", "xml", "csv", "php"], "location": "query", "type": "string"}}, "response": {"$ref": "keyResponse"}, "httpMethod": "GET", "path": "key/get", "id": "KeyMethods.Get"}}}', true));
   }
 }
 
@@ -276,6 +275,16 @@ class CompareResponseBody extends apiModel {
   }
   public function getCommon_likes() {
     return $this->common_likes;
+  }
+}
+
+class ImportGeneric extends apiModel {
+  public $postBody;
+  public function setPostBody($postBody) {
+    $this->postBody = $postBody;
+  }
+  public function getPostBody() {
+    return $this->postBody;
   }
 }
 
