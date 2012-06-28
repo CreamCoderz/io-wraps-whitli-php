@@ -47,7 +47,7 @@ Above is just a pseudo-PHP-code example of how this library works. If you'd like
 ## IDE is optional, but nice
 At Mashery, we love [vim](http://www.vim.org) just as much as the next guy, but when it comes to tool-tips, code-completion and general object-oriented goodness, IDEs can be really useful. [Eclipse](http://eclipse.org), [Aptana](http://aptana.com), [Netbeans](http://netbeans.org), [Komodo](http://www.activestate.com/komodo-ide), etc. They're all very mature and useful tools.
 
-## Installation / Quick Start Guide
+## Installation / Quick start guide
 Follow the steps below for a quick start to using this client library:
 
 1. Grab the latest source with git. 
