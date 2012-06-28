@@ -26,7 +26,6 @@ if (isset($_GET['uid']) && (isset($_GET['key_id']))) {
 	
 	// Make the API call with the required parameters
 	$keyResponse = $service->KeyMethods->Get($key_id,$uid);
-	// $keyResponse = $service->Key->Get($key_id, $uid);
 }
 ?>
 
