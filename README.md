@@ -7,7 +7,6 @@ The Whit.li API rates the relevance of people, content, and brands. Whit.li divi
 Head over to [developer.whit.li](http://developer.whit.li) to learn more. You can register for instant access to their API, view their documentation, and even make live API calls with their interactive docs.
 
 ## Summary
-
 An API client library (also known as an SDK or language wrapper) is an efficiency tool for programmer that helps bind external resources to your native programming language. Traditionally, to integrate an API into your project without a client library, you would need to do the following:
 
 1. Construct a network request using a transport library (e.g. HTTP)
@@ -33,7 +32,10 @@ Client libraries make life easier by bringing the API into your native language 
     $api = new apiService($client);
 
     // Make an API call and store the response in an object
-    $responseObject = $api -> KeyMethods -> Get ("123","abc");
+    $responseObject = $api -> KeyMethods -> Get (
+        "123",
+        "abc"
+    );
 
     // Pull out the "status" value from the response payload
     $status = $responseObject->getStatus();
@@ -62,7 +64,7 @@ Follow the steps below for a quick start to using this client library:
 
 5. Point your browser to one of the example files where this is deployed:
 
-    <pre>Ex: http://localhost/io-wrap-whitli-php/whitli_get_key.php</pre>
+    <pre>Ex: http://localhost/io-wraps-whitli-php/examples/get_key.php</pre>
 
 ## About / License
 * No warranty expressed or implied. Software as is.
